@@ -32,10 +32,10 @@ function simple_child_theme_setup() {
     remove_theme_support('custom_searchform');          //  Enable use of custom searchform template - /templates/searchform.php
     remove_theme_support('nice-search');                //  Enables clean search in url; from /?s= to /search/result
     remove_theme_support('theme-options-setup');        //  Enable Setup tab in theme options
-    // remove_theme_support('more-themes-link');            //  Enable more theme links under dashboard menu
-    // remove_theme_support('admin-footer-text');           //  Enable extra text in admin footer
-    remove_theme_support('remove_admin_menu_items');    //  Remove Unwanted Admin Menu Items(left hand side)
-    remove_theme_support('remove_admin_bar_links');     //  Remove Unwanted Admin Menu Items(admin bar)
+    remove_theme_support('more-themes-link');            //  Enable more theme links under dashboard menu
+    remove_theme_support('admin-footer-text');           //  Enable extra text in admin footer
+    // remove_theme_support('remove_admin_menu_items');    //  Remove Unwanted Admin Menu Items(left hand side)
+    // remove_theme_support('remove_admin_bar_links');     //  Remove Unwanted Admin Menu Items(admin bar)
 
     // Custom Image Sizes
     add_theme_support( 'post-thumbnails' );
