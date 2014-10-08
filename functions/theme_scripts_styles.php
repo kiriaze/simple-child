@@ -11,12 +11,16 @@ function child_scripts_styles() {
     // wp_dequeue_script( 'SCRIPTNAME' );
     // wp_deregister_script( 'SCRIPTNAME' );
 
-    
+
     // 	 Register Styles & Scripts (note: use get_stylesheet_directory_uri() child themes)
-    
+
     //	CSS
 	wp_register_style( 'main', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 	wp_enqueue_style('main');
+
+    // signet - display unique seal
+    wp_register_script('signet', '//oss.maxcdn.com/signet/0.4.4/signet.min.js', array('jquery'), '', true );
+    wp_enqueue_script('signet');
 
 	// JS
 	if ( of_get_option('general_multi_checkbox')['smooth_scroll'] ) :
