@@ -27,5 +27,7 @@
 	<?php wp_head(); ?>
 
 	<?php //get_template_part('partials/typekit'); ?>
+	
+	<?php get_template_part('partials/analytics'); ?>
 
 </head>
