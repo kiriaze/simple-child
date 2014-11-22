@@ -1,6 +1,6 @@
 	<footer role="contentinfo" id="footer">
 
-		<?php do_action('simple_footer_widget_area', 'simple_footer_widget_area'); ?>
+		<?php do_action('simple_footer_widgets', 'simple_footer_widgets'); ?>
 
 		<div class="row footer-top">
 		    <nav class="columns-2">
