@@ -24,7 +24,7 @@ function simple_child_theme_setup() {
     // Custom Theme Support {Comment out what you want enabled}
     remove_theme_support('simple-relative-urls');       //  Enable relative URLs
     remove_theme_support('simple-rewrites');            //  Enable URL rewrites for only parent theme
-    remove_theme_support('simple-breadcrumbs');         //  Disable breadcrumbs
+    // remove_theme_support('simple-breadcrumbs');         //  Disable breadcrumbs
     // remove_theme_support('debug');                       //  Disable debug bar
     // remove_theme_support('admin_bar');                   //  Disable admin bar
     remove_theme_support('jquery-cdn');                 //  Enable to load jQuery from the Google CDN. Issue with infinite scroll if enabled, include migrate
@@ -34,8 +34,8 @@ function simple_child_theme_setup() {
     remove_theme_support('theme-options-setup');        //  Enable Setup tab in theme options
     remove_theme_support('more-themes-link');            //  Enable more theme links under dashboard menu
     remove_theme_support('admin-footer-text');           //  Enable extra text in admin footer
-    // remove_theme_support('remove_admin_menu_items');    //  Remove Unwanted Admin Menu Items(left hand side)
-    // remove_theme_support('remove_admin_bar_links');     //  Remove Unwanted Admin Menu Items(admin bar)
+    remove_theme_support('remove_admin_menu_items');    //  Remove Unwanted Admin Menu Items(left hand side)
+    remove_theme_support('remove_admin_bar_links');     //  Remove Unwanted Admin Menu Items(admin bar)
 
     // Custom Image Sizes
     add_theme_support( 'post-thumbnails' );
