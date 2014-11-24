@@ -1,14 +1,16 @@
 <?php
-
+global $simple_widgets;
 $simple_widgets = array( 'simple_example_widget' );
 
 class simple_example_widget extends WP_Widget {
 
 	public function __construct() {
 		parent::__construct(
-	 		'template_authors',
+	 		'simple_example_widget', // unique
 			'template: Test Widget',
-			array( 'description' => __( 'Simple Example Widget', SIMPLE_THEME_SLUG ) )
+			array( 
+				'description' => __( 'Simple Example Widget', SIMPLE_THEME_SLUG )
+			)
 		);
 	}
 
@@ -24,7 +26,7 @@ class simple_example_widget extends WP_Widget {
 
 }
 
-add_action('widgets_init', function(){
+add_action('widgets_init', function() {
 	global $simple_widgets;
 	if ( is_array( $simple_widgets ) ) :
 		foreach( $simple_widgets as $widget ) {
