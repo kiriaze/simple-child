@@ -1,0 +1,13 @@
+{
+  "name": "simple-child",
+  "description": "WordPress Theme description",
+  "type": "wordpress-theme",
+  "homepage": "http://getsimple.io",
+  "authors": [
+    {
+      "name": "Constantine Kiriaze",
+      "email": "hello@getsimple.io",
+      "homepage": "http://getsimple.io"
+    }
+  ]
+}
