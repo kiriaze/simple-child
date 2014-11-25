@@ -32,7 +32,7 @@
 			'reading_time'	=> true,
 			'views' 		=> true,
 			'comments' 		=> true,
-			'icons'			=> false
+			'icons'			=> true
 		));
 	?>
 

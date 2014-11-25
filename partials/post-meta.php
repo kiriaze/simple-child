@@ -15,14 +15,14 @@
 
 <footer>
 	<?php echo apply_filters('simple_post_meta', array(
-		'author' 		=> false,
-		'date' 	 		=> false,
+		'author' 		=> true,
+		'date' 	 		=> true,
 		'tags' 			=> true,
-		'categories' 	=> false,
-		'wordcount' 	=> false,
-		'reading_time'	=> false,
-		'views' 		=> false,
-		'comments' 		=> false,
-		'icons'			=> false
+		'categories' 	=> true,
+		'wordcount' 	=> true,
+		'reading_time'	=> true,
+		'views' 		=> true,
+		'comments' 		=> true,
+		'icons'			=> true
 	)); ?>
 </footer>
