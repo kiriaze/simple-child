@@ -1,18 +1,18 @@
 <?php
 
-add_action( 'tgmpa_register', 'simple_child_require_plugins' ); 
+add_action( 'tgmpa_register', 'simple_child_require_plugins' );
 function simple_child_require_plugins() {
- 
+
     $plugins = array(
     	// acf pro
 	 	array(
-	        'name'          => 'Advanced Custom Fields Pro',
-	        'slug'          => 'advanced-custom-fields-pro',
-	        'source'        => 'git@bitbucket.org:madebygrizzly/acf-pro.git',
-	        'required'      => true,
-	        'external_url'  => 'git@bitbucket.org:madebygrizzly/acf-pro.git', // If set, overrides default API URL and points to an external URL
-	        'force_activation' => true, // activate this plugin when the user switches to another theme
-	        'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
+			'name'          => 'Advanced Custom Fields Pro',
+			'slug'          => 'advanced-custom-fields-pro',
+			'source'        => 'git@bitbucket.org:madebygrizzly/acf-pro.git',
+			'required'      => true,
+			'external_url'  => 'git@bitbucket.org:madebygrizzly/acf-pro.git', // If set, overrides default API URL and points to an external URL
+			'force_activation' => true, // activate this plugin when the user switches to another theme
+			'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
 	    )
     );
 
@@ -45,7 +45,7 @@ function simple_child_require_plugins() {
 	        'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 		)
 	);
- 
+
     tgmpa( $plugins, $config );
- 
+
 }
