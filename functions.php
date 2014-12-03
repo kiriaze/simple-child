@@ -21,21 +21,22 @@ function simple_child_theme_setup() {
         $content_width = 960; // set it to $medium
     }
 
-    // Custom Theme Support {Comment out what you want enabled}
-    remove_theme_support('simple-relative-urls');       //  Enable relative URLs
-    remove_theme_support('simple-rewrites');            //  Enable URL rewrites for only parent theme
-    // remove_theme_support('simple-breadcrumbs');         //  Disable breadcrumbs
-    // remove_theme_support('debug');                       //  Disable debug bar
-    // remove_theme_support('admin_bar');                   //  Disable admin bar
-    remove_theme_support('jquery-cdn');                 //  Enable to load jQuery from the Google CDN. Issue with infinite scroll if enabled, include migrate
+    // Simple Framework Supports
+    add_theme_support('simple-relative-urls');      //  Enable relative URLs
+    add_theme_support('simple-rewrites');           //  Enable URL rewrites for only parent theme
+    add_theme_support('simple-breadcrumbs');        //  Enable breadcrumbs
+    add_theme_support('debug');                     //  Enable debug bar
+    add_theme_support('admin_bar');                 //  Enable admin bar
+    add_theme_support('jquery-cdn');                //  Enable to load jQuery from the Google CDN. Issue with infinite scroll if enabled, include migrate
 
-    remove_theme_support('custom_searchform');          //  Enable use of custom searchform template - /templates/searchform.php
-    remove_theme_support('nice-search');                //  Enables clean search in url; from /?s= to /search/result
-    remove_theme_support('theme-options-setup');        //  Enable Setup tab in theme options
-    remove_theme_support('more-themes-link');            //  Enable more theme links under dashboard menu
-    remove_theme_support('admin-footer-text');           //  Enable extra text in admin footer
-    remove_theme_support('remove_admin_menu_items');    //  Remove Unwanted Admin Menu Items(left hand side)
-    remove_theme_support('remove_admin_bar_links');     //  Remove Unwanted Admin Menu Items(admin bar)
+    // remove_theme_support in child theme if undesired, all enabled by default
+    add_theme_support('custom_searchform');         //  Enable use of custom searchform template - /templates/searchform.php
+    add_theme_support('nice-search');               //  Enables clean search in url; from /?s= to /search/result
+    add_theme_support('theme-options-setup');       //  Enable Setup tab in theme options
+    add_theme_support('more-themes-link');          //  Enable more theme links under dashboard menu
+    add_theme_support('admin-footer-text');         //  Enable extra text in admin footer
+    add_theme_support('remove_admin_menu_items');   //  Remove Unwanted Admin Menu Items(left hand side)
+    add_theme_support('remove_admin_bar_links');    //  Remove Unwanted Admin Menu Items(admin bar)
 
     // Custom Image Sizes
     add_theme_support( 'post-thumbnails' );
