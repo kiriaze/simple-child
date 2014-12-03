@@ -58,7 +58,7 @@ function simple_child_theme_setup() {
     require_once locate_template( '/functions/theme_sidebars.php', true );
     require_once locate_template( '/functions/theme_menus.php', true );
     require_once locate_template( '/functions/theme_widgets.php', true );
-    require_once locate_template( '/functions/theme-ajax.php', true );
+    require_once locate_template( '/functions/theme_ajax.php', true );
     require_once locate_template( '/functions/theme_tinymce.php', true );
     require_once locate_template( '/functions/theme_extras.php', true );
     require_once locate_template( '/functions/theme_plugins.php', true );
