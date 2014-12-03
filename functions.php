@@ -32,7 +32,7 @@ function theme_support() {
     add_theme_support('remove_admin_bar_links');    //  Remove Unwanted Admin Menu Items(admin bar)
 }
 
-add_action('after_setup_theme', 'simple_child_theme_setup', 10);
+add_action('after_setup_theme', 'simple_child_theme_setup', 20);
 function simple_child_theme_setup() {
 
     //  $content_width is a global variable used by WordPress for max image upload sizes and media embeds (in pixels).
