@@ -12,7 +12,7 @@
  * @version     1.0
 */
 
-add_action('after_setup_theme', 'simple_child_theme_setup', 11);
+add_action('after_setup_theme', 'simple_child_theme_setup', 10);
 function simple_child_theme_setup() {
 
     //  $content_width is a global variable used by WordPress for max image upload sizes and media embeds (in pixels).
