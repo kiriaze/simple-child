@@ -6,20 +6,13 @@
 	$footer-selector: unquote('#footer'),
 	$push-selector:   unquote('#push-footer')
 ) {
-
 	@include breakpoint($small) {
-
-		html,
-		body {
-			// height: 100%!important; // override smoothscroll
-		}
-		body #{$main-selector} {
-			height:        auto !important;
+		body > #{$main-selector} {
 			margin-bottom: -$height;
+			min-height:    100%;
 			#{$push-selector} {
 				clear:  both;
 				height: $height;
-				position: relative;
 			}
 		}
 		#{$footer-selector} {
@@ -27,9 +20,7 @@
 			height:   $height;
 			position: relative;
 		}
-
 	}
-
 }
 
 // A CSS-based sticky footer.

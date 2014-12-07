@@ -9,7 +9,7 @@
 	#{$brandClass},
 	#{$brandClass}:before,
 	#{$brandClass} > *,
-	nav {
+	nav,{
 	    @extend %ib;
 	    vertical-align: middle;
 	    text-align: left;

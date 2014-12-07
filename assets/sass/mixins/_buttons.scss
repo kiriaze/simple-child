@@ -1,14 +1,16 @@
-/*  Buttons
+/*	Buttons
 ============================================ */
 @mixin btn($color:null) {
+    // Setup
     @extend %ib;
-    background: $color;
-    color: white;
     padding: 0 1.5em; // relative to button font size
     @include font-size($paragraph-font-size);
     @include border-radius(2px);
     margin-bottom: .5em;
     // box-sizing: content-box; // to work with borders
+
+    -webkit-appearance: none; // for strange mobile rendering
+    transform: translateZ(0); // for when within elements that are being transformed
 
     // override <button>'s
     border: none;
@@ -18,15 +20,8 @@
     text-align: center;
     white-space: nowrap;
     outline: 0;
+	text-decoration: none;
+	vertical-align: middle;
 
     transition: $transition;
-
-    &:hover{
-        background: darken($color, 10);
-        color: white;
-    }
-}
-
-%btn {
-    @include btn($theme-color);
 }
