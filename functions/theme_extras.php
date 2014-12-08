@@ -21,7 +21,7 @@ function child_body_class( $classes ){
 ================================================== */
 add_action( 'customize_preview_init', 'simple_customize_preview_js', 99 );
 function simple_customize_preview_js() {
-	wp_enqueue_script( 'simple_customizer', get_stylesheet_directory_uri() . '/assets/js/customizer.js', array( 'jquery','customize-preview' ), '', true );
+	wp_enqueue_script( 'simple_customizer', get_stylesheet_directory_uri() . '/assets/js/plugins/customizer.js', array( 'jquery','customize-preview' ), '', true );
 }
 
 /*	Typography Options
