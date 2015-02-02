@@ -14,7 +14,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title><?php __(wp_title('&laquo;', true, 'right'), SIMPLE_THEME_SLUG); ?> <?php __(bloginfo('name'), SIMPLE_THEME_SLUG); ?></title>
+	<title><?php __(wp_title('&laquo;', true, 'right'), SIMPLE_THEME_SLUG); ?></title>
 
     <meta name="description" content="<?php is_single() ? single_post_title('', true) : bloginfo('name'); echo " - "; bloginfo('description'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1 minimal-ui" />
@@ -27,7 +27,7 @@
 	<?php wp_head(); ?>
 
 	<?php //get_template_part('partials/typekit'); ?>
-	
+
 	<?php get_template_part('partials/analytics'); ?>
 
 </head>
