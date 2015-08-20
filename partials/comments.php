@@ -15,8 +15,7 @@
 ?>
 
 <div class="comments">
-	<?php
-	if ( post_password_required() ) : ?>
+	<?php if ( post_password_required() ) : ?>
 		<p><?php _e( 'Post is password protected. Enter the password to view any comments.', SIMPLE_THEME_SLUG ); ?></p>
 </div>
 

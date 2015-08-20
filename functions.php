@@ -29,8 +29,8 @@ function theme_support() {
 	add_theme_support('theme-options-setup');       //  Enable Setup tab in theme options
 	add_theme_support('more-themes-link');          //  Enable more theme links under dashboard menu
 	add_theme_support('admin-footer-text');         //  Enable extra text in admin footer
-	add_theme_support('remove_admin_menu_items');   //  Remove Unwanted Admin Menu Items(left hand side)
-	add_theme_support('remove_admin_bar_links');    //  Remove Unwanted Admin Menu Items(admin bar)
+	// add_theme_support('remove_admin_menu_items');   //  Remove Unwanted Admin Menu Items(left hand side)
+	// add_theme_support('remove_admin_bar_links');    //  Remove Unwanted Admin Menu Items(admin bar)
 }
 
 add_action('after_setup_theme', 'simple_child_theme_setup', 20);

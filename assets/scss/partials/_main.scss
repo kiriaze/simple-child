@@ -1,0 +1,75 @@
+html,
+body {
+
+}
+
+html {
+
+}
+
+body{
+
+}
+
+#main {
+
+}
+
+.container {
+	// // overwrite the _grid.scss padded value
+	// padding-left: 1rem;
+	// padding-right: 1rem;
+}
+
+// [text_columns col="2"]Your text here[/text_columns]
+.text-columns {
+	@include breakpoint($small) {
+		column-count: 2;
+	}
+}
+
+//  if body has class has-sidebar
+.has-sidebar {
+	.primary {
+		@include breakpoint($medium) {
+			@include columns(.7);
+		}
+	}
+	#sidebar {
+		@include breakpoint($medium) {
+			@include columns(.3);
+		}
+	}
+}
+
+// attach to parent of desired container
+// e.g. .columns-2 .content {}
+.valign {
+	@extend %valign;
+}
+
+.no-flick {
+    @extend %no-flick;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* -- Use this wrapper if you want to block-out a column with padding
+Taken from http://csswizardry.com/2011/10/the-island-object/) -- */
+.island {
+	@include breakpoint($small) {
+		padding: 3rem 5rem;
+	}
+	@include breakpoint($medium) {
+		padding: 3rem 7rem;
+	}
+	@include breakpoint($large) {
+		padding: 3rem 15rem;
+	}
+}

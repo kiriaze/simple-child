@@ -19,9 +19,6 @@
     <meta name="description" content="<?php is_single() ? single_post_title('', true) : bloginfo('name'); echo " - "; bloginfo('description'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1 minimal-ui" />
 
-    <meta name="signet:authors" content="Constantine Kiriaze">
-    <meta name="signet:links" content="http://github.com/kiriaze, http://twitter.com/kiriaze, http://kiriaze.com, http://getsimple.io">
-
 	<?php get_template_part('partials/ie'); ?>
 
 	<?php wp_head(); ?>

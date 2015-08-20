@@ -8,7 +8,7 @@ class simple_example_widget extends WP_Widget {
 		parent::__construct(
 	 		'simple_example_widget', // unique
 			'template: Test Widget',
-			array( 
+			array(
 				'description' => __( 'Simple Example Widget', SIMPLE_THEME_SLUG )
 			)
 		);
@@ -29,7 +29,7 @@ class simple_example_widget extends WP_Widget {
 add_action('widgets_init', function() {
 	global $simple_widgets;
 	if ( is_array( $simple_widgets ) ) :
-		foreach( $simple_widgets as $widget ) {
+		foreach ( $simple_widgets as $widget ) {
 			register_widget( $widget );
 		}
 	endif;

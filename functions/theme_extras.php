@@ -92,7 +92,7 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
 		$custom_type = of_get_option('enable_custom_typography');
 		if ( is_array($custom_type) ) :
 		foreach ( $custom_type as $key => $value ) {
-			if( $value ) {
+			if ( $value ) {
 				if ( in_array( $selected_fonts[$index], $all_google_fonts ) ) {
 					options_typography_enqueue_google_font($selected_fonts[$index]);
 				}

@@ -1,0 +1,42 @@
+// file for overriding type styles easily
+
+@for $i from 1 through 6 {
+    h#{$i} {
+		font-weight: 300;
+    }
+}
+
+p {
+	&.lead {
+		display: block;
+		font-size: 1.3em;
+		font-weight: 400;
+		line-height: 150%;
+		margin: 0 0 3rem;
+	}
+	a {
+		font-weight: 500;
+		border-bottom: 1px solid lighten($dark-grey, 50);
+
+		&:hover {
+			color: $dark-grey;
+			border-color: $dark-grey;
+		}
+	}
+}
+
+
+hr {
+	display: inline-block;
+	border: none;
+	clear: both;
+	margin: 44px auto 54px;
+	margin-left: -32.5%;
+	position: relative;
+	width: 65%;
+	left: 50%;
+	border-bottom: 5px solid $light-grey;
+	.stripe:nth-child(even) & {
+		border-color: white;
+	}
+}

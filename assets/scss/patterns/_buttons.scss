@@ -1,0 +1,284 @@
+.btn {
+	@include btn($primary-color);
+
+	// theme specific
+	border-radius: 2px;
+	font-weight: 400;
+	letter-spacing: 1px;
+
+	padding: 0em 2em;
+	line-height: 3.5;
+
+	background-color: transparent;
+	color: $black;
+	border: 2px solid;
+
+	@include font-size(13);
+
+	&.small {
+		@include font-size(11);
+	}
+
+	&.large {
+		@include font-size(15);
+	}
+
+	&:hover {
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+	}
+
+	.dark & {
+		border-color: $white;
+		&:not(.solid):not([class*='bg-']) {
+			color: $white;
+			&:hover:not([class*='bg-']) {
+				background-color: $white;
+				color: $black;
+			}
+		}
+	}
+
+	&[class*='bg-'] {
+		color: $white;
+		&.bg-white {
+			color: $black;
+			// border: 2px solid $white;
+			&:hover {
+				background: $black;
+				color: $white;
+				border-color: $black;
+			}
+			.dark & {
+				box-shadow: none;
+				&:hover {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	&[data-scroll-to="top"] {
+		transition: $transition;
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		padding: 0em 0.75em;
+		margin: 0;
+		height: 1.8em;
+		line-height: 1.75em;
+		font-size: 1.4em;
+		border: none;
+		background-color: $primary-color;
+		color: white;
+		&.fadeIn {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.invert {
+		background-color: $black;
+		border-color: $black;
+		color: $light-grey;
+		&:hover {
+			background-color: $white;
+			border-color: $black;
+			color: $black;
+		}
+		.dark & {
+			&:hover {
+				border-color: $white;
+				color: $black;
+			}
+		}
+	}
+
+	&.solid {
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: $white;
+		&:hover {
+			background-color: $secondary-color;
+			border-color: $secondary-color;
+			color: $white;
+		}
+		&.invert {
+			background-color: $secondary-color;
+			color: $white;
+			border-color: $secondary-color;
+			&:hover {
+				background-color: $primary-color;
+				border-color: $primary-color;
+				color: $white;
+			}
+			.dark & {
+
+			}
+		}
+	}
+
+	&.no-content {
+		padding: 0;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+	}
+
+	// social shortcode plugin
+	&.flip { // add extra i.icon
+		width: 45px;
+		height: 40px;
+		overflow: hidden;
+		padding: 0!important;
+		text-align: center;
+		i {
+			position: relative;
+			top: 0;
+			display: block;
+			height: 100%;
+			line-height: 40px;
+			transition: $transition;
+		}
+		&:hover i {
+			top: -40px;
+		}
+	}
+
+	// breakpoint
+	width: 100%;
+	@include breakpoint($small) {
+		width: auto;
+	}
+
+	i {
+		display: inline-block;
+		line-height: 1;
+		font-size: 12px;
+		margin-right: 0.5rem;
+		vertical-align: middle;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		speak: none;
+	}
+
+	// Arrow
+	.arrow {
+		font-family: 'FontAwesome';
+		margin-right: 0;
+		margin-left: 0.5rem;
+		&:before {
+			content: "\f054";
+		}
+	}
+
+	// all buttons with bg color classes attached
+	// $colors array in _colors.scss
+	// Notice: errors with libsass enabled
+	@each $newColor, $color in $colors {
+		&[class*='bg-#{$newColor}'] {
+			background-color: $color;
+			border-color: $color;
+			border: 0;
+			&:hover {
+				background-color: lighten($color, 5);
+				border-color: lighten($color, 5);
+			}
+			// Active state
+			&:active {
+				color: darken($color, 18%);
+				background-color: lighten($color, 5);
+				box-shadow: inset 0px 2px 5px rgba(0,0,0,0.25);
+				text-shadow: rgba(255,255,255,0.25) 0px 1px 0;
+			}
+		}
+	}
+
+	&.bg-default {
+		color: #666;
+		&:active {
+			color: darken(#666, 18%);
+		}
+	}
+
+	&.bg-yellow {
+		color: darken($yellow, 18%);
+	}
+
+	&.bg-lime {
+		color: darken($yellow, 18%);
+	}
+
+}
+
+// alternate button styles
+a.button {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+	color: #171a1c;
+	border: 1px solid rgba(23,26,28,.4);
+	background: transparent;
+	padding: 15px 25px;
+	font-size: 10px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	line-height: 1;
+	transition: all 0.3s;
+	&:before {
+		-webkit-backface-visibility: hidden;
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 100%;
+		left: -1px;
+		bottom: 0px;
+		right: -1px;
+		background: #171a1c;
+		transition: top 0.3s;
+	}
+	&.dark {
+		color: #fff;
+		border: 1px solid rgba(255,255,255,.6);
+		background: transparent;
+		&:before {
+			background: #fff;
+		}
+	}
+	&:hover,
+	&:active {
+		color: #fff;
+		border: 1px solid #171a1c;
+		&.dark {
+			color: #171a1c;
+			border: 1px solid #fff;
+		}
+		&:before {
+			top: -1px;
+		}
+	}
+	@include breakpoint($medium) {
+		padding: 18px 30px;
+		font-size: 11px;
+	}
+	@include breakpoint($large) {
+		padding: 20px 45px;
+		font-size: 11px;
+	}
+	i {
+		padding-right: 5px;
+	}
+}

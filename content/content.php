@@ -15,7 +15,7 @@
 
 			<figure class="post-thumbnail">
 
-			<?php if( !$single ) : ?>
+			<?php if ( !$single ) : ?>
 				<a href="<?php the_permalink(); ?>">
 			<?php endif; ?>
 

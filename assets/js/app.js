@@ -1,12 +1,3 @@
-// @codekit-prepend 'vendor/modernizr-2.8.2.min.js'
-// @codekit-prepend 'plugins/fastclick.js'
-// @codekit-prepend 'plugins/retina.js'
-// @codekit-prepend 'plugins/simpleAnchors.js'
-// @codekit-prepend 'plugins/jquery.easing.min.js'
-// @codekit-prepend 'plugins/jquery.lazyload.min.js'
-// @codekit-prepend "plugins/jquery.validate.min.js"
-// @codekit-prepend 'plugins/responsive-nav/responsive-nav.min.js'
-
 (function($){
 
 	/* jshint devel:true */
@@ -16,32 +7,56 @@
 
 	var SHORTNAME = window.THEMENAME;
 
-	var $window = $(window);
+	var $window      = $(window),
+		$body        = $(document.body),
+		$html        = $(document.documentElement);
 
 	SHORTNAME.init = function(){
+
 		SHORTNAME.setElements();
+		SHORTNAME.colors();
 		SHORTNAME.basics();
-		SHORTNAME.vertAlign();
 		SHORTNAME.forms();
 		SHORTNAME.infinitescroll();
 		SHORTNAME.ajax();
+
 	};
 
 	SHORTNAME.setElements = function(){
-		SHORTNAME.elems				= {};
+		SHORTNAME.elems               = {};
+
+		// defaults
+		SHORTNAME.elems.html          =	$('html');
+		SHORTNAME.elems.body          =	$('body');
+		SHORTNAME.elems.scrollToTop   =	$('a[data-scroll-to="top"]');
+
 	};
 
-	SHORTNAME.basics = function(){
+	SHORTNAME.colors = function() {
+		var colors = {
+			aqua    : '#7FDBFF',
+			blue    : '#0074D9',
+			lime    : '#01FF70',
+			navy    : '#001F3F',
+			teal    : '#39CCCC',
+			olive   : '#3D9970',
+			green   : '#2ECC40',
+			red     : '#FF4136',
+			maroon  : '#85144B',
+			orange  : '#FF851B',
+			purple  : '#B10DC9',
+			yellow  : '#FFDC00',
+			fuchsia : '#F012BE',
+			gray    : '#aaa',
+			white   : '#fff',
+			black   : '#111',
+			silver  : '#ddd'
+		};
+		// console.log(colors);
+		// console.log(colors.blue);
+	};
 
-		if( window.back_to_top ) {
-			$window.scroll(function(){
-				if ( $(this).scrollTop() > 300 ) {
-					$('a[data-scroll-to="top"]').addClass('fadeIn');
-				} else {
-					$('a[data-scroll-to="top"]').removeClass('fadeIn');
-				}
-			});
-		}
+	SHORTNAME.basics = function() {
 
 		// override reply link and smooth scroll to form
 		$('.comment-reply-link').on('click', function(e){
@@ -50,13 +65,6 @@
 				scrollTop: $('#respond').offset().top
 			});
 		});
-
-		// jQuery Lazyload
-		$('img.lazy').lazyload({
-			threshold   : 200,
-			effect      : 'fadeIn',
-		});
-		// usage: <img class="lazy" data-original="" src="gray.png" alt="" />
 
 		// Fastclick.js - Polyfill to remove click delays on browsers with touch UIs
 		$(function() {
@@ -68,6 +76,9 @@
 			offset: -1, // 80-1, header height on scroll
 			easing: 'easeInOutCubic'
 		});
+
+		// Target your .container, .wrapper, .post, etc.
+		SHORTNAME.elems.body.fitVids();
 
 
 
@@ -81,7 +92,6 @@
 		    }
 		});
 		alert('foo');
-
 
 	};
 
@@ -158,17 +168,6 @@
 
 	};
 
-	SHORTNAME.vertAlign = function() {
-		// Vertical Align
-		var vertAlign = function() {
-			$('.valign').each(function() {
-				var newHeight = $(this).parent().height();
-				$(this).parent().height(newHeight);
-			});
-		};
-		vertAlign();
-	};
-
 	SHORTNAME.ajax = function(){
         // We'll pass this variable to the PHP function example_ajax_request
         var fruit = 'Banana';
@@ -190,7 +189,11 @@
         });
     }
 
-	$window.load(function(){
+	$window.load(function() {
+
+	});
+
+	$window.resize(function(event) {
 
 	});
 
@@ -198,6 +201,6 @@
 
 		SHORTNAME.init();
 
-	});//close document ready
+	});
 
 })(window.jQuery);

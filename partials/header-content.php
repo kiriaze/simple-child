@@ -6,7 +6,7 @@
 	$page_object = get_queried_object();
 	$page_id     = get_queried_object_id();
 
-	$single = $post->ID == $page_id ? true : false;
+	$single      = $post->ID == $page_id ? true : false;
 ?>
 
 <header>

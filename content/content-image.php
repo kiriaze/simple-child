@@ -1,17 +1,17 @@
-<?php 
+<?php
 	global $single;
 
 	$page_object = get_queried_object();
 	$page_id     = get_queried_object_id();
-	
+
 	$single = $post->ID == $page_id ? true : false;
 ?>
 
 <article role="article" <?php post_class(); ?>>
 
-	<?php if( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() ) : ?>
 
-		<?php if( !$single ) : ?>
+		<?php if ( !$single ) : ?>
 			<a href="<?php the_permalink(); ?>">
 				<figure class="post-thumbnail">
 		<?php else : ?>
@@ -41,7 +41,7 @@
 				);
 				the_post_thumbnail( $size, $attr ); // featured image with lazy load attributes
 
-				if( $caption ) :
+				if ( $caption ) :
 			?>
 				<style>
 					/*temp styling*/
@@ -65,7 +65,7 @@
 						//echo $title;
 						//echo $alt;
 						echo $caption;
-						//echo $description; 
+						//echo $description;
 					?>
 				</figcaption>
 
@@ -73,18 +73,18 @@
 
 			</figure>
 
-		<?php if( !$single ) : ?>
+		<?php if ( !$single ) : ?>
 			</a>
 		<?php endif; ?>
 
 	<?php endif; ?>
 
 	<div class="post-content">
-		
+
 		<?php get_template_part('partials/header-content'); ?>
 
 		<?php
-		if( !$single ) :
+		if ( !$single ) :
 			echo truncate_text( get_the_excerpt(), of_get_option('excerpt_length'), simple_excerpt_more() );
 		else :
 			the_content();

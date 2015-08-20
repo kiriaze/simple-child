@@ -12,75 +12,49 @@
 
 if ( is_post_type_archive($post_type) ) :
 
-	if ( $post_type && locate_template( '/templates/archive-'.$post_type.'.php' ) != '' ) :
-		$template = 'archive-'.$post_type.'.php';
+	if ( $post_type && locate_template( '/templates/archive-'. $post_type .'.php' ) != '' ) :
+		$template = 'archive-'. $post_type .'.php';
 	else :
-		$template = 'archive.php';
+		$template = '/templates/archive.php';
 	endif;
-
-	require_once locate_template( '/templates/' . $template );
 
 elseif ( is_404() || is_search() ) :
 
-	$template = '404.php';
-	require_once locate_template( '/templates/' . $template );
+	$template = '/templates/404.php';
 
 elseif ( is_page() ) :
 
-	$template = 'page.php';
-	require_once locate_template( '/templates/' . $template );
+	$template = '/templates/page.php';
 
 elseif ( is_singular($post_type) ) :
 
-	if( $post_type && locate_template( '/templates/single-'.$post_type.'.php' ) != '' ) :
-		$template = 'single-'.$post_type.'.php';
+	if( $post_type && locate_template( '/templates/single-'. $post_type .'.php' ) != '' ) :
+		$template = 'single-'. $post_type .'.php';
 	else :
-		$template = 'single.php';
+		$template = '/templates/single.php';
 	endif;
-
-	require_once locate_template( '/templates/' . $template );
 
 elseif ( is_tax() ) :
 
-	$tax = $wp_query->get_queried_object();
+	$tax      = $wp_query->get_queried_object();
 	$taxonomy = $tax->taxonomy;
 
-	if ( locate_template( '/templates/taxonomy-'.$taxonomy.'.php' ) != '' ) :
-		$template = 'taxonomy-'.$taxonomy.'.php';
+	if ( locate_template( '/templates/taxonomy-'. $taxonomy .'.php' ) != '' ) :
+		$template = 'taxonomy-'. $taxonomy .'.php';
 	else :
-		$template = 'archive.php';
+		$template = '/templates/archive.php';
 	endif;
-
-	require_once locate_template( '/templates/' . $template );
 
 elseif ( is_archive() ) :
 
-	$template = 'archive.php';
-	require_once locate_template( '/templates/' . $template );
+	$template = '/templates/archive.php';
 
 else :
 
-	// $template = 'blog.php';
-	// require_once locate_template( '/templates/' . $template );
-
-	// or :
-
-	if ( have_posts() ) :
-
-		while ( have_posts() ) : the_post();
-
-			get_template_part( 'content/content', get_post_format() );
-
-		endwhile;
-
-	else :
-
-		get_template_part( 'partials/no-results' );
-
-	endif;
-
-	wp_reset_postdata();
+	$template = '/templates/blog.php';
 
 endif;
+
+require_once locate_template( $template );
 
 ?>

@@ -3,12 +3,12 @@
 	<?php get_template_part('partials/header-content'); ?>
 
 	<blockquote>
-		<?php 
+		<?php
 		$quote 	= get_field('simple-quote');
 		$author = get_field('simple-quote-author');
 		?>
 		<p><?php echo $quote; ?></p>
-		<?php if($author) : ?>
+		<?php if ( $author ) : ?>
 		<cite>- <?php echo $author; ?></cite>
 		<?php endif; ?>
 	</blockquote>
