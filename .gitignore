@@ -5,6 +5,9 @@ bower_components/
 *.map
 .publish
 dist
-vendor/
+
+#ignore only the bower dir
+/assets/vendor/
+
 .sass-cache/
 .codekit-cache/
