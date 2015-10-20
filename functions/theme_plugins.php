@@ -8,9 +8,9 @@ function simple_child_require_plugins() {
 	 	// array(
 			// 'name'          => 'Advanced Custom Fields Pro',
 			// 'slug'          => 'advanced-custom-fields-pro',
-			// 'source'        => 'git@bitbucket.org:madebygrizzly/acf-pro.git',
+			// 'source'        => 'git@bitbucket.org:kiriaze/acf-pro.git',
 			// 'required'      => true,
-			// 'external_url'  => 'git@bitbucket.org:madebygrizzly/acf-pro.git', // If set, overrides default API URL and points to an external URL
+			// 'external_url'  => 'git@bitbucket.org:kiriaze/acf-pro.git', // If set, overrides default API URL and points to an external URL
 			// 'force_activation' => true, // activate this plugin when the user switches to another theme
 			// 'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
 	  //   )
